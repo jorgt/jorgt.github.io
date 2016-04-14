@@ -1,0 +1,73 @@
+---
+layout: default
+---
+
+{% include intro.html %}
+<section class="post-list">
+    <div class="container content">
+        {% for page in site.pages %}
+            {% if page.url != "/404" and page.title %}
+                <div class="page-preview front-page">
+                    <span class="post-title alignable pull-left">
+                        <h2>
+                        <a class="underline" href="{{ page.url | prepend: site.baseurl }}.html">
+                            {{ page.title }}
+                        </a>
+                        </h2>
+                    </span>
+                    <span class="post-time alignable pull-right">
+                        <time>{{ page.date | date: '%B %d, %Y '}}</time>
+                    </span>
+
+                    <div style="clear:both"></div>
+                    <div class="page-excerpt">
+                        <p>{{ page.excerpt }}</p>
+                    </div>
+                    {% if page.title == 'Blog' %}
+                        <div class="posts-preview">
+                        {% for post in site.posts limit:3 %}
+                            <div class="post-preview">
+                                <span class="alignable pull-left">
+                                    <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
+                                        <p><i class="fa fa-check"></i>  <span class="underline">{{ post.title }}</span></p>
+                                    </a>
+                                </span>
+                                <span class="post-time alignable pull-right">
+                                    <span style="display:none">{{ post.category | lowercase | capitalize }}</span>
+                                    <time>{{ post.date | date: '%B %d, %Y '}}</time>
+                                </span>
+                                <div style="clear:both"></div>
+                            </div>
+                        {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            {% endif %}
+        {% endfor %}
+        <div class="post-preview front-page">
+            <h2 class="post-title">Find me in various places!</h2>
+            <ul class="social-list">
+                <li>
+                    <a href="http://stackoverflow.com/users/502613/jorg" target="_blank">StackOverflow</a>
+                    <i class="fa fa-stack-overflow pull-left"></i>
+                    </li>
+                <li>
+                    <a href="https://github.com/jorgt" target="_blank">Github</a>
+                    <i class="fa fa-github pull-left"></i>
+                </li>
+                <li>
+                    <a href="https://au.linkedin.com/in/jorgthuijls" target="_blank">LinkedIn</a>
+                    <i class="fa fa-linkedin pull-left"></i>
+                </li>
+                <li>
+                    <a href="https://twitter.com/_jorgt" target="_blank">Twitter</a>
+                    <i class="fa fa-twitter pull-left"></i>
+                </li>
+                <li>
+                    <a href="http://scn.sap.com/people/jorgt" target="_blank">SCN</a>
+                    <i class="fa fa-cloud pull-left"></i>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>

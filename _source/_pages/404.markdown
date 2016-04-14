@@ -1,0 +1,7 @@
+---
+layout: notfound
+title: 404
+permalink: /404
+sitemap: false
+---
+Click on the little circle to get back

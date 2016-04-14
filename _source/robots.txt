@@ -1,0 +1,9 @@
+---
+layout: null
+sitemap: false
+---
+User-agent: *
+{% for node in site.pages %}{% if node.sitemap == false %}{% assign isset = true %}
+Disallow: {{ node.url }}{% endif %}{% endfor %}
+{% if isset != true %}Disallow:{% endif %}
+Sitemap: {{ site.url }}/sitemap.xml

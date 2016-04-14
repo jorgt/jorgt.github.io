@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+<section class="intro">
+    <div class="container">
+        <h1 class="site-name">
+            Jorg<span class="faded">'s blog</span>
+        </h1>
+    </div>
+</section>
+
+<section class="post-list">
+    <div class="container">
+        {% for post in site.posts %}
+            <div class="post-preview">
+                <span class="post-title alignable pull-left">
+                    <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
+                        <h2 class="underline">{{ post.title }}</h2>
+                    </a>
+                </span>
+                <span class="post-time alignable pull-right">
+                    <span style="display:none">{{ post.category | lowercase | capitalize }}</span>
+                    <time>{{ post.date | date: '%B %d, %Y '}}</time>
+                </span>
+                <div style="clear:both"></div>
+            </div>
+        {% endfor %}
+    </div>
+</section>

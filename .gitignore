@@ -1,0 +1,17 @@
+*.gem
+*.swp
+*~
+.DS_Store
+.analysis
+.bundle/
+.byebug_history
+.jekyll-metadata
+.ruby-gemset
+.ruby-version
+.sass-cache
+_vendor
+vendor
+Gemfile.lock
+s3_website.yml
+_site/
+ssl/
